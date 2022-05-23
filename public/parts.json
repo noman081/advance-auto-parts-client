@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Bumper",
+        "picture": "https://i.ibb.co/pPBSFxN/bumper.jpg",
+        "description": "",
+        "minQuantity": 104,
+        "availableQuantity": 725,
+        "ppUnit": 53
+    },
+    {
+        "name": "Car Door",
+        "picture": "https://i.ibb.co/yqNBwTr/car-door.jpg",
+        "description": "",
+        "minQuantity": 108,
+        "availableQuantity": 700,
+        "ppUnit": 54
+    },
+    {
+        "name": "Headlight",
+        "picture": "https://i.ibb.co/PFzjr7g/headlight.jpg",
+        "description": "",
+        "minQuantity": 100,
+        "availableQuantity": 769,
+        "ppUnit": 53
+    },
+    {
+        "name": "Horn",
+        "picture": "https://i.ibb.co/JsyTV36/horn.webp",
+        "description": "",
+        "minQuantity": 107,
+        "availableQuantity": 872,
+        "ppUnit": 59
+    },
+    {
+        "name": "Tire",
+        "picture": "https://i.ibb.co/2SSTmLR/tire.jpg",
+        "description": "",
+        "minQuantity": 102,
+        "availableQuantity": 700,
+        "ppUnit": 56
+    },
+    {
+        "name": "Wheel Rim",
+        "picture": "https://i.ibb.co/rZkpDvH/wheel-rim.jpg",
+        "description": "",
+        "minQuantity": 104,
+        "availableQuantity": 714,
+        "ppUnit": 51
+    }
+]

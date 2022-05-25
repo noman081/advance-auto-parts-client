@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 
 const useAdmin = user => {
-    debugger;
     const [admin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true);
     useEffect(() => {

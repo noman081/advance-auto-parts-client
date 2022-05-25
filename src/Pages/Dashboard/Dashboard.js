@@ -6,7 +6,6 @@ import useAdmin from '../../hooks/useAdmin';
 import useUser from '../../hooks/useUser';
 
 const Dashboard = () => {
-    debugger;
     const [user] = useAuthState(auth);
     const [isUser] = useUser(user);
     const [admin] = useAdmin(user);
@@ -33,7 +32,7 @@ const Dashboard = () => {
                     {
                         admin && <>
                             <li><Link to='/dashboard/manageOrder'>Manage Orders</Link></li>
-                            <li><Link to='/ad'>Add Product</Link></li>
+                            <li><Link to='/dashboard/addProduct'>Add Product</Link></li>
                             <li><Link to='/myProfile'>Manage Users</Link></li>
                             <li><Link to='/myProfile'>Manage Products</Link></li>
                         </>

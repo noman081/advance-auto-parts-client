@@ -15,6 +15,7 @@ import CommonDashboard from './Pages/Dashboard/CommonDashboard';
 import RequireUser from './Pages/Login/RequireUser';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import ManageOrders from './Pages/Dashboard/Admin/ManageOrders';
+import AddProduct from './Pages/Dashboard/Admin/AddProduct';
 function App() {
   return (
     <div>
@@ -38,8 +39,13 @@ function App() {
           <Route path='review' element={
             <RequireUser><AddReview /></RequireUser>
           }></Route>
+
+          {/* admin routes */}
           <Route path='manageOrder' element={
             <RequireAdmin><ManageOrders /></RequireAdmin>
+          }></Route>
+          <Route path='addProduct' element={
+            <RequireAdmin><AddProduct /></RequireAdmin>
           }></Route>
           <Route path='myProfile' element={<MyProfile />}></Route>
         </Route>

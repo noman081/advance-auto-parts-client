@@ -27,6 +27,8 @@ const Purchase = () => {
     const onSubmit = data => {
         debugger;
         const order = {
+            productId: part?._id,
+            productName: part?.name,
             name: user?.displayName,
             email: user?.email,
             address: data.address,

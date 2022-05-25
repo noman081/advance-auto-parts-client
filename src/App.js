@@ -11,6 +11,8 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/User/MyOrders';
 import AddReview from './Pages/Dashboard/User/AddReview';
 import MyProfile from './Pages/Dashboard/User/MyProfile';
+import CommonDashboard from './Pages/Dashboard/CommonDashboard';
+import RequireUser from './Pages/Login/RequireUser';
 function App() {
   return (
     <div>
@@ -27,9 +29,13 @@ function App() {
           <RequireAuth>
             <Dashboard />
           </RequireAuth>}>
-          <Route index element={<MyOrders />}></Route>
-          <Route path='myOrders' element={<MyOrders />}></Route>
-          <Route path='review' element={<AddReview />}></Route>
+          <Route index element={<CommonDashboard />}></Route>
+          <Route path='myOrders' element={
+            <RequireUser><MyOrders /></RequireUser>
+          }></Route>
+          <Route path='review' element={
+            <RequireUser><AddReview /></RequireUser>
+          }></Route>
           <Route path='myProfile' element={<MyProfile />}></Route>
         </Route>
       </Routes>

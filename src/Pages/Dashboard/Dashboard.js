@@ -6,6 +6,7 @@ import useAdmin from '../../hooks/useAdmin';
 import useUser from '../../hooks/useUser';
 
 const Dashboard = () => {
+    debugger;
     const [user] = useAuthState(auth);
     const [isUser] = useUser(user);
     const [admin] = useAdmin(user);

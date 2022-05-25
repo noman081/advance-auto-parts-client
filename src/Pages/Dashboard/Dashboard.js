@@ -32,7 +32,7 @@ const Dashboard = () => {
                     {/* admin */}
                     {
                         admin && <>
-                            <li><Link to='/manage/order'>Manage Orders</Link></li>
+                            <li><Link to='/dashboard/manageOrder'>Manage Orders</Link></li>
                             <li><Link to='/ad'>Add Product</Link></li>
                             <li><Link to='/myProfile'>Manage Users</Link></li>
                             <li><Link to='/myProfile'>Manage Products</Link></li>

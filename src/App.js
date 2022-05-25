@@ -13,6 +13,8 @@ import AddReview from './Pages/Dashboard/User/AddReview';
 import MyProfile from './Pages/Dashboard/User/MyProfile';
 import CommonDashboard from './Pages/Dashboard/CommonDashboard';
 import RequireUser from './Pages/Login/RequireUser';
+import RequireAdmin from './Pages/Login/RequireAdmin';
+import ManageOrders from './Pages/Dashboard/Admin/ManageOrders';
 function App() {
   return (
     <div>
@@ -35,6 +37,9 @@ function App() {
           }></Route>
           <Route path='review' element={
             <RequireUser><AddReview /></RequireUser>
+          }></Route>
+          <Route path='manageOrder' element={
+            <RequireAdmin><ManageOrders /></RequireAdmin>
           }></Route>
           <Route path='myProfile' element={<MyProfile />}></Route>
         </Route>

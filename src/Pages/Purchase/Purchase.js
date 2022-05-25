@@ -111,6 +111,14 @@ const Purchase = () => {
                                     {errors.phone?.type === 'required' && <span className="label-text-alt text-red-500">{errors.phone.message}</span>}
                                 </label>
                             </div>
+                            <label htmlFor="" className='text-gray-700'>
+                                Total Price
+                            </label>
+                            <input
+                                type="text"
+                                className="block border border-grey-light w-full p-3 rounded mb-4 text-gray-600"
+                                value={price}
+                                disabled />
                             <div>
                                 <label className="block text-gray-700">Order Quantity</label>
                                 <input type="text" placeholder="Quantity" className="w-full px-4 py-3 rounded-lg mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
@@ -124,19 +132,12 @@ const Purchase = () => {
                                     {errors.quantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.quantity.message}</span>}
                                 </label>
                             </div>
-                            <label htmlFor="" className='text-gray-700'>
-                                Total Price
-                            </label>
-                            <input
-                                type="text"
-                                className="block border border-grey-light w-full p-3 rounded mb-4 text-gray-600"
-                                value={price}
-                                disabled />
+
                             {
-                                (quantity < part?.minQuantity) && <span className="label-text-alt text-red-500">Please Order at least {part?.minQuantity}</span>
+                                (quantity < part?.minQuantity) && <span className="label-text-alt text-red-500">Please Order at least {part?.minQuantity} pieces</span>
                             }
                             {
-                                (quantity > part?.availableQuantity) && <span className="label-text-alt text-red-500">Please Order not more than {part?.availableQuantity}</span>
+                                (quantity > part?.availableQuantity) && <span className="label-text-alt text-red-500">Please Order not more than {part?.availableQuantity} pices</span>
                             }
 
                             <button

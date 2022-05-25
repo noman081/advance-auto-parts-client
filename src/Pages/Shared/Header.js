@@ -8,9 +8,9 @@ import Loading from './Loading';
 const Header = () => {
     const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
-    if (loading) {
-        return <Loading />
-    }
+    /*    if (loading) {
+           return <Loading />
+       } */
     const logOut = () => {
         signOut(auth);
         navigate('/');

@@ -22,6 +22,7 @@ const Register = () => {
     useEffect(() => {
         if (user || gUser) {
             navigate('/');
+            console.log(user || gUser);
         }
     }, [user, gUser, navigate]);
 

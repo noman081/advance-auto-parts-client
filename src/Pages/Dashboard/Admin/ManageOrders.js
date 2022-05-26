@@ -7,7 +7,7 @@ import Loading from '../../Shared/Loading';
 import ManageOrderRow from './ManageOrderRow';
 const ManageOrders = () => {
     const navigate = useNavigate();
-    const url = `http://localhost:5000/orders`;
+    const url = `https://advanceautocar.herokuapp.com/orders`;
     const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(url, {
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

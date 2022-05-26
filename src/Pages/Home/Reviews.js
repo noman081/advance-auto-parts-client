@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import Part from './Part';
+import Review from './Review';
 
-const Parts = () => {
-    const [parts, setParts] = useState([]);
+const Reviews = () => {
+    const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://advanceautocar.herokuapp.com/parts?home=true', {
+        fetch('https://advanceautocar.herokuapp.com/reviews', {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
             .then(res => res.json())
-            .then(data => setParts(data));
+            .then(data => setReviews(data));
     }, []);
     return (
         <div className='my-10'>
-            <h1 className='text-3xl text-center'>Our Parts Collection</h1>
+            <h1 className='text-3xl text-center'>Our Client Says</h1>
             <div className="px-12 grid lg:grid-cols-3 grid-cols-1 gap-4 mt-10">
                 {
-                    parts.map(part => <Part key={part.name} part={part} />)
+                    reviews.map(review => <Review key={review.name} review={review} />)
                 }
             </div>
         </div>
     );
 };
 
-export default Parts;
+export default Reviews;

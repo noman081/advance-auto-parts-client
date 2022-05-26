@@ -12,7 +12,7 @@ const Purchase = () => {
     const { register, formState: { errors }, handleSubmit, reset, watch } = useForm({
         defaultValues: { quantity: 0 }
     });
-    const url = `http://localhost:5000/part/${id}`;
+    const url = `https://advanceautocar.herokuapp.com/part/${id}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -23,7 +23,6 @@ const Purchase = () => {
         quantity = 0;
     }
     const price = quantity * part?.ppUnit;
-    console.log(quantity, part?.minQuantity);
     const onSubmit = data => {
         debugger;
         const order = {
@@ -36,7 +35,7 @@ const Purchase = () => {
             orderQuantity: quantity,
             price: price
         };
-        fetch('http://localhost:5000/orders', {
+        fetch('https://advanceautocar.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,13 +44,11 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.insertedId) {
                     toast.success('Order placed successfully!!');
                     reset();
                 }
             });
-        console.log(order);
     };
     return (
         <div className='my-5'>

@@ -11,7 +11,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate();
     const email = user?.email;
-    const url = `http://localhost:5000/order?email=${email}`;
+    const url = `https://advanceautocar.herokuapp.com/order?email=${email}`;
     const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(url, {
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

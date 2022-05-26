@@ -22,6 +22,7 @@ import Portfolio from './Pages/Neutral/Portfolio';
 import Blogs from './Pages/Neutral/Blogs';
 import NotFound from './Pages/Neutral/NotFound';
 import Payment from './Pages/Dashboard/User/Payment';
+import Parts from './Pages/Home/Parts';
 function App() {
   return (
     <div>
@@ -29,6 +30,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/home' element={<Home />}></Route>
+        <Route path='/parts' element={<Parts />}></Route>
         <Route path='/portfolio' element={<Portfolio />}></Route>
         <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/login' element={<Login />}></Route>

@@ -4,7 +4,7 @@ import Loading from '../../Shared/Loading';
 import DeleteModal from './DeleteModal';
 import ManagePartsRow from './ManagePartsRow';
 const ManageParts = () => {
-    const { data: parts, isLoading, refetch } = useQuery('allParts', () => fetch('http://localhost:5000/parts', { headers: { 'authorization': `${localStorage.getItem('accessToken')}` } }).then(res => res.json()));
+    const { data: parts, isLoading, refetch } = useQuery('allParts', () => fetch('https://advanceautocar.herokuapp.com/parts', { headers: { 'authorization': `${localStorage.getItem('accessToken')}` } }).then(res => res.json()));
     const [deletePart, setDeletePart] = useState(null);
     if (isLoading) {
         return <Loading />

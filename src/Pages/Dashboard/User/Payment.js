@@ -10,7 +10,7 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe('pk_test_51L3cKlBCMPk2rJfTi4jpRIYZg0zklpzvFEdsfWPbAkBZbMD0BFvTlJnryBHGTgPCyGCLyZ244YoMOtA8t0Zg9uv700BPQylKtD')
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://advanceautocar.herokuapp.com/order/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',

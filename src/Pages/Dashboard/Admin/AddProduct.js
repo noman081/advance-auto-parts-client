@@ -16,8 +16,7 @@ const AddProduct = () => {
             availableQuantity,
             ppUnit
         }
-        console.log(part);
-        fetch('http://localhost:5000/parts', {
+        fetch('https://advanceautocar.herokuapp.com/parts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

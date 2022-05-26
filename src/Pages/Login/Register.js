@@ -35,7 +35,6 @@ const Register = () => {
         signUpError = (error.message || gError.message || updateError.message);
     };
     const onSubmit = async (data) => {
-        console.log(data);
         await createUserWithEmailAndPassword(data.email, data.password);
         await updateProfile({ displayName: data.name });
         reset();

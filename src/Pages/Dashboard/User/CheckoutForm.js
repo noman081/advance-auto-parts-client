@@ -16,7 +16,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, name, email } = order;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://advanceautocar.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -75,7 +75,6 @@ const CheckoutForm = ({ order }) => {
         else {
             setCardError('');
             setTransactionId(paymentIntent.id);
-            console.log(paymentIntent);
             setSuccess('Congratulations! Your payment is completed!!');
             toast.success('Congratulations! Your payment is completed!!');
 
@@ -84,7 +83,7 @@ const CheckoutForm = ({ order }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://advanceautocar.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
@@ -94,7 +93,6 @@ const CheckoutForm = ({ order }) => {
             }).then(res => res.json())
                 .then(data => {
                     setProcessing(false);
-                    console.log(data);
                 })
 
         }

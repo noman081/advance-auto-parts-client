@@ -6,7 +6,7 @@ const useToken = user => {
         const role = 'user';
         const currentUser = { email: email, role };
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://advanceautocar.herokuapp.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',

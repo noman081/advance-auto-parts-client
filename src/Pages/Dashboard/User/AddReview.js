@@ -19,7 +19,7 @@ const AddReview = () => {
             ratings: data.star,
             message: data.review
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://advanceautocar.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -40,7 +40,6 @@ const AddReview = () => {
                     toast.success('Thanks for your review!');
                 }
             })
-        console.log(data);
         reset();
     };
     return (

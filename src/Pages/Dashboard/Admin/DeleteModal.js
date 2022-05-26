@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteModal = ({ deletePart, refetch, setDeletePart }) => {
     const { _id, name } = deletePart;
     const handleDelete = () => {
-        fetch(`http://localhost:5000/part/${_id}`, {
+        fetch(`https://advanceautocar.herokuapp.com/part/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -12,7 +12,6 @@ const DeleteModal = ({ deletePart, refetch, setDeletePart }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.deletedCount) {
                     setDeletePart(null);
                     toast.success(`${name} deleted successfully`);

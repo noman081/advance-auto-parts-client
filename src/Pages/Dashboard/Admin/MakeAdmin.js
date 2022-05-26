@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import Loading from '../../Shared/Loading';
 import MakeAdminRow from './MakeAdminRow';
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://advanceautocar.herokuapp.com/users', {
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }

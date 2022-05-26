@@ -6,7 +6,7 @@ const useUser = u => {
     useEffect(() => {
         const email = u?.email;
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://advanceautocar.herokuapp.com/user/${email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

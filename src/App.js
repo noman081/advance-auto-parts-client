@@ -19,6 +19,8 @@ import AddProduct from './Pages/Dashboard/Admin/AddProduct';
 import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin';
 import ManageParts from './Pages/Dashboard/Admin/ManageParts';
 import Portfolio from './Pages/Neutral/Portfolio';
+import Blogs from './Pages/Neutral/Blogs';
+import NotFound from './Pages/Neutral/NotFound';
 function App() {
   return (
     <div>
@@ -27,6 +29,7 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/home' element={<Home />}></Route>
         <Route path='/portfolio' element={<Portfolio />}></Route>
+        <Route path='/blogs' element={<Blogs />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/purchase/:id' element={
@@ -59,6 +62,8 @@ function App() {
           }></Route>
           <Route path='myProfile' element={<MyProfile />}></Route>
         </Route>
+
+        <Route path='*' element={<NotFound />}></Route>
       </Routes>
 
       <ToastContainer />

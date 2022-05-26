@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { useSignInWithGoogle, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle, useSignInWithEmailAndPassword, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import useToken from '../../hooks/useToken';
@@ -13,25 +13,29 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGithub, gitUser, gitLoading, gitError] = useSignInWithGithub(auth);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-    const [token] = useToken(user || gUser);
+    const [token] = useToken(user || gUser || gitUser);
     let signInError;
     const handleGoogleSignIn = () => {
         signInWithGoogle();
+    }
+    const handleGithubLogin = () => {
+        signInWithGithub();
     }
     useEffect(() => {
         if (token) {
             navigate(from, { replace: true });
         }
     }, [token, from, navigate]);
-    if (loading || gLoading) {
+    if (loading || gLoading || gitLoading) {
         return <Loading />
     }
-    if (error || gError) {
-        signInError = (error.message || gError.message);
+    if (error || gError || gitError) {
+        signInError = (error.message || gError.message || gitError.message);
     };
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
@@ -104,11 +108,17 @@ const Login = () => {
                                 Google</span>
                         </div>
                     </button>
+                    <button onClick={handleGithubLogin} type="button" className=" my-5 w-full block bg-white hover:bg-red-500 hover:text-white focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300">
+                        <div className="flex items-center justify-center">
+                            <span className="ml-4">
+                                Log in
+                                with
+                                Github</span>
+                        </div>
+                    </button>
 
                     <p className="mt-8">Need an account? <Link to='/register' className="text-blue-500 hover:text-blue-700 font-semibold">Create an
                         account</Link></p>
-
-
                 </div>
             </div>
 

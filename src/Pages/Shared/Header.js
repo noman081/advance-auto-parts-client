@@ -32,7 +32,7 @@ const Header = () => {
                         <li><Link to='/login'>Login</Link></li>
                     </ul>
                 </div>
-                <Link to='/' className="normal-case text-xl text-white lg:ml-3">Manufacture</Link>
+                <Link to='/' className="normal-case text-xl text-white lg:ml-3">Advance Auto Parts</Link>
             </div>
             <div className='navbar-end'>
                 <label htmlFor='dashboard-drawer' className="btn btn-ghost bg-none text-white lg:hidden">

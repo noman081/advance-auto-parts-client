@@ -21,6 +21,7 @@ import ManageParts from './Pages/Dashboard/Admin/ManageParts';
 import Portfolio from './Pages/Neutral/Portfolio';
 import Blogs from './Pages/Neutral/Blogs';
 import NotFound from './Pages/Neutral/NotFound';
+import Payment from './Pages/Dashboard/User/Payment';
 function App() {
   return (
     <div>
@@ -63,6 +64,11 @@ function App() {
           <Route path='myProfile' element={<MyProfile />}></Route>
         </Route>
 
+        <Route path='payment/:id' element={<RequireAuth>
+          <RequireUser>
+            <Payment />
+          </RequireUser>
+        </RequireAuth>}></Route>
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
 

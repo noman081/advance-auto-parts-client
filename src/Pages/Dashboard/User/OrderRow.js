@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OrderRow = ({ order, index, refetch }) => {
     const { productName, orderQuantity, price } = order;
+
     return (
         <tr>
             <th>{index + 1}</th>
@@ -9,13 +11,19 @@ const OrderRow = ({ order, index, refetch }) => {
             <td>{orderQuantity}</td>
             <td>{price}</td>
             <td>
-                <button className="btn btn-primary text-white">Pay Now</button>
+                {(!order.paid) && <Link to={`/payment/${order._id}`}><button className='btn btn-primary text-white'>Pay Now</button></Link>}
+                {(order.paid) && <span className='text-success text-lg text-center'>Paid</span>}
             </td>
             <td>
-                N/A
+                {
+                    (order.transactionId) ? <span className='text-accent'>{order.transactionId}</span> : 'N/A'
+                }
             </td>
             <td>
-                <button className="btn bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600 text-white">Cancel</button>
+                <button
+                    disabled={(order.transactionId)}
+                    className="btn bg-red-500 border-red-500 hover:bg-red-600 hover:border-red-600 text-white"
+                >Cancel</button>
             </td>
         </tr>
     );

@@ -28,7 +28,7 @@ const MyOrders = () => {
         return <Loading />
     }
     return (
-        <div>
+        <div className='px-8'>
             <h2 className="text-2xl ml-10 my-5">My Orders</h2>
 
             <div>

@@ -12,7 +12,7 @@ const MakeAdmin = () => {
         return <Loading />
     }
     return (
-        <div>
+        <div className='px-8'>
             <h2 className="text-2xl ml-10 my-5">Total User: {users.length}</h2>
             <div>
                 <div className="overflow-x-auto">
